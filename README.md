@@ -127,6 +127,3 @@ git clone https://github.com/marianarigueiro/AvaliadorCafe.git
 ## Autor
 
 Mariana Rigueiro
-
-```
-```
