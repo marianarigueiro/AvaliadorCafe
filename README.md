@@ -1,4 +1,3 @@
-````markdown
 # Avaliador de Cafés
 
 Aplicativo Android desenvolvido em Kotlin com o objetivo de registrar, avaliar e organizar cafés com base em métodos de extração, notas e características sensoriais.
