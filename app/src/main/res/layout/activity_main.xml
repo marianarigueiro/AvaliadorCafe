@@ -6,23 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#F5F1EA">
+    android:padding="18dp"
+    android:background="#F5F3FF">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="☕ Avaliador de Cafés"
-        android:textSize="28sp"
+        android:text="Avaliador de Cafés"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="#4E342E"
-        android:layout_marginBottom="16dp"/>
+        android:textColor="#5E35B1"
+        android:layout_marginBottom="18dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCafe"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAdicionar"
@@ -30,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#6D4C41"/>
+        android:tint="@android:color/white"
+        app:backgroundTint="#7C4DFF"/>
 
 </LinearLayout>

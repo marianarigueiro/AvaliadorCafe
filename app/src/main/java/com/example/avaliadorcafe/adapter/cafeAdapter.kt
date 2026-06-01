@@ -8,13 +8,18 @@ import com.example.avaliadorcafe.model.Cafe
 
 class CafeAdapter(
     private val lista: List<Cafe>,
-    private val onClick: (Cafe) -> Unit
+    private val onEditar: (Cafe) -> Unit,
+    private val onExcluir: (Cafe) -> Unit
 ) : RecyclerView.Adapter<CafeAdapter.CafeViewHolder>() {
 
-    inner class CafeViewHolder(val binding: ItemCafeBinding)
-        : RecyclerView.ViewHolder(binding.root)
+    inner class CafeViewHolder(
+        val binding: ItemCafeBinding
+    ) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CafeViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CafeViewHolder {
 
         val binding = ItemCafeBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -25,19 +30,37 @@ class CafeAdapter(
         return CafeViewHolder(binding)
     }
 
-    override fun getItemCount() = lista.size
+    override fun getItemCount(): Int {
+        return lista.size
+    }
 
-    override fun onBindViewHolder(holder: CafeViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: CafeViewHolder,
+        position: Int
+    ) {
 
         val cafe = lista[position]
 
         holder.binding.txtNome.text = cafe.nome
-        holder.binding.txtMetodo.text = "Método: ${cafe.metodo}"
-        holder.binding.txtNota.text = "Nota: ${cafe.nota}"
-        holder.binding.txtTags.text = "Tags: ${cafe.tags}"
 
-        holder.itemView.setOnClickListener {
-            onClick(cafe)
+        holder.binding.txtMetodo.text =
+            "Método: ${cafe.metodo}"
+
+        holder.binding.txtNota.text =
+            "Nota: ${cafe.nota}"
+
+        holder.binding.txtDescricao.text =
+            cafe.descricao
+
+        holder.binding.txtTags.text =
+            "Tag: ${cafe.tags}"
+
+        holder.binding.btnEditar.setOnClickListener {
+            onEditar(cafe)
+        }
+
+        holder.binding.btnExcluir.setOnClickListener {
+            onExcluir(cafe)
         }
     }
 }
