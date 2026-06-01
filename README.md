@@ -52,6 +52,22 @@ com.example.avaliadorcafe
     │   └── item_cafe.xml
 ````
 
+## Estrutura da Main Activity
+
+A MainActivity é a tela principal do aplicativo. Ela possui:
+
+* RecyclerView para exibir as avaliações cadastradas;
+* FloatingActionButton para adicionar um novo café;
+* Integração com o banco de dados Room;
+* Atualização automática da lista de cafés;
+* Navegação para a tela de cadastro.
+
+Fluxo da aplicação:
+
+SplashActivity → MainActivity → CadastroActivity
+
+A MainActivity atua como ponto central da aplicação, permitindo visualizar, consultar e gerenciar todas as avaliações registradas.
+
 ## Funcionalidades do CRUD
 
 ### Create
