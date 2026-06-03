@@ -8,12 +8,16 @@
     android:orientation="vertical"
     android:background="#F5F3FF">
 
+    <!-- LOGO ANIMADO -->
     <TextView
+        android:id="@+id/logoCafe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="☕"
-        android:textSize="80sp"/>
+        android:textSize="90sp"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- Nome do app -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,6 +27,7 @@
         android:textStyle="bold"
         android:layout_marginTop="12dp"/>
 
+    <!-- Subtítulo -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

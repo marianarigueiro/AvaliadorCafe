@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <resources>
 
-    <style
-        name="Theme.AvaliadorCafe"
-        parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Theme.AvaliadorCafe"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- cores principais -->
+        <item name="colorPrimary">#7C4DFF</item>
+        <item name="colorSecondary">#5E35B1</item>
+
+    </style>
 
 </resources>

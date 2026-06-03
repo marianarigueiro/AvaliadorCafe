@@ -2,35 +2,32 @@ package com.example.avaliadorcafe
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.avaliadorcafe.data.AppDatabase
 import com.example.avaliadorcafe.databinding.ActivityCadastroBinding
 import com.example.avaliadorcafe.model.Cafe
-import android.widget.ArrayAdapter
 
 class CadastroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCadastroBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
 
         binding = ActivityCadastroBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
 
         val db = AppDatabase.getDatabase(this)
 
         val tagsDisponiveis = listOf(
+            "Doce",
             "Frutado",
-            "Achocolatado",
-            "Caramelo",
             "Cítrico",
-            "Floral",
-            "Intenso",
-            "Suave"
+            "Chocolate",
+            "Caramelo",
+            "Floral"
         )
 
         val spinnerAdapter = ArrayAdapter(
@@ -45,37 +42,23 @@ class CadastroActivity : AppCompatActivity() {
 
         binding.spinnerTags.adapter = spinnerAdapter
 
-        // Recebe o ID caso esteja editando
         val id = intent.getIntExtra("id", 0)
 
-        // Preenche os campos se veio da edição
         if (id != 0) {
 
-            binding.edtNome.setText(
-                intent.getStringExtra("nome")
-            )
-
-            binding.edtMetodo.setText(
-                intent.getStringExtra("metodo")
-            )
-
-            binding.edtNota.setText(
-                intent.getStringExtra("nota")
-            )
-
-            binding.edtDescricao.setText(
-                intent.getStringExtra("descricao")
-            )
+            binding.edtNome.setText(intent.getStringExtra("nome"))
+            binding.edtMetodo.setText(intent.getStringExtra("metodo"))
+            binding.edtNota.setText(intent.getStringExtra("nota"))
+            binding.edtDescricao.setText(intent.getStringExtra("descricao"))
 
             val tagRecebida = intent.getStringExtra("tags")
-
             val posicao = tagsDisponiveis.indexOf(tagRecebida)
 
             if (posicao >= 0) {
                 binding.spinnerTags.setSelection(posicao)
             }
 
-            binding.btnSalvar.text = "Atualizar Café"
+            binding.btnSalvar.text = getString(R.string.btn_atualizar_cafe)
         }
 
         binding.btnSalvar.setOnClickListener {
@@ -97,7 +80,7 @@ class CadastroActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this,
-                    "Café cadastrado!",
+                    getString(R.string.msg_cafe_cadastrado),
                     Toast.LENGTH_SHORT
                 ).show()
 
@@ -109,7 +92,7 @@ class CadastroActivity : AppCompatActivity() {
 
                 Toast.makeText(
                     this,
-                    "Café atualizado!",
+                    getString(R.string.msg_cafe_atualizado),
                     Toast.LENGTH_SHORT
                 ).show()
             }

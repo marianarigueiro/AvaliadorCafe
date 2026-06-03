@@ -1,3 +1,46 @@
 <resources>
-    <string name="app_name">AvaliadorCafe</string>
+
+    <!-- App -->
+    <string name="app_name">Avaliador de Cafés</string>
+    <string name="titulo_app">☕ Avaliador de Cafés</string>
+
+    <!-- Botões -->
+    <string name="btn_editar">Editar</string>
+    <string name="btn_excluir">Excluir</string>
+    <string name="btn_salvar_cafe">Salvar Café</string>
+    <string name="btn_atualizar_cafe">Atualizar Café</string>
+
+    <!-- Acessibilidade -->
+    <string name="desc_btn_adicionar">Adicionar café</string>
+
+    <!-- Home -->
+    <string name="txt_quantidade_padrao">0 cafés cadastrados</string>
+    <string name="hint_pesquisa_cafe">Pesquisar café...</string>
+
+    <!-- Tela novo café -->
+    <string name="titulo_novo_cafe">Novo Café</string>
+    <string name="hint_nome_cafe">Nome do café</string>
+    <string name="hint_metodo">Método de extração</string>
+    <string name="hint_nota">Nota</string>
+    <string name="hint_descricao">Descrição</string>
+
+    <string name="titulo_categoria_sensorial">Categoria Sensorial</string>
+
+    <!-- Adapter -->
+    <string name="metodo">Método: %s</string>
+    <string name="nota">Nota: %s</string>
+    <string name="categoria_sensorial">Categoria Sensorial: %s</string>
+
+    <!-- Home -->
+    <string name="home_emoji">☕</string>
+    <string name="home_titulo">Avaliador de Cafés</string>
+    <string name="home_subtitulo">Métodos de Extração</string>
+
+    <!-- Toasts -->
+    <string name="msg_cafe_cadastrado">Café cadastrado!</string>
+    <string name="msg_cafe_atualizado">Café atualizado!</string>
+
+    <string name="cafes_cadastrados">%d cafés cadastrados</string>
+    <string name="cafes_encontrados">%d cafés encontrados</string>
+
 </resources>

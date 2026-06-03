@@ -3,6 +3,7 @@ package com.example.avaliadorcafe.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.avaliadorcafe.R
 import com.example.avaliadorcafe.databinding.ItemCafeBinding
 import com.example.avaliadorcafe.model.Cafe
 
@@ -30,9 +31,7 @@ class CafeAdapter(
         return CafeViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return lista.size
-    }
+    override fun getItemCount(): Int = lista.size
 
     override fun onBindViewHolder(
         holder: CafeViewHolder,
@@ -41,19 +40,20 @@ class CafeAdapter(
 
         val cafe = lista[position]
 
+        val context = holder.itemView.context
+
         holder.binding.txtNome.text = cafe.nome
 
         holder.binding.txtMetodo.text =
-            "Método: ${cafe.metodo}"
+            context.getString(R.string.metodo, cafe.metodo)
 
         holder.binding.txtNota.text =
-            "Nota: ${cafe.nota}"
+            context.getString(R.string.nota, cafe.nota)
 
-        holder.binding.txtDescricao.text =
-            cafe.descricao
+        holder.binding.txtDescricao.text = cafe.descricao
 
         holder.binding.txtTags.text =
-            "Tag: ${cafe.tags}"
+            context.getString(R.string.categoria_sensorial, cafe.tags)
 
         holder.binding.btnEditar.setOnClickListener {
             onEditar(cafe)

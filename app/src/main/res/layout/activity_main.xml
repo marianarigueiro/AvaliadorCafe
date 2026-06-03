@@ -6,17 +6,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="18dp"
-    android:background="#F5F3FF">
+    android:padding="20dp"
+    android:background="#F8F7FF">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Avaliador de Cafés"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:text="@string/titulo_app"
+        android:textAlignment="center"
         android:textColor="#5E35B1"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/txtQuantidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_quantidade_padrao"
+        android:textAlignment="center"
+        android:textColor="#6B7280"
+        android:textSize="15sp"
         android:layout_marginBottom="18dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#7C4DFF">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPesquisa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_pesquisa_cafe"
+            android:drawableStart="@android:drawable/ic_menu_search"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCafe"
@@ -31,8 +59,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:src="@android:drawable/ic_input_add"
-        android:tint="@android:color/white"
-        app:backgroundTint="#7C4DFF"/>
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:tint="@android:color/white"
+        app:backgroundTint="#7C4DFF"
+        android:contentDescription="@string/desc_btn_adicionar"/>
 
 </LinearLayout>

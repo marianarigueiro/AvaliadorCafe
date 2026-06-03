@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Novo Café"
+            android:text="@string/titulo_novo_cafe"
             android:textColor="#5E35B1"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -38,7 +38,7 @@
                 android:id="@+id/edtNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nome do café"
+                android:hint="@string/hint_nome_cafe"
                 android:textColor="#1E1E1E"
                 android:textColorHint="#7C4DFF"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +59,7 @@
                 android:id="@+id/edtMetodo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Método de extração"
+                android:hint="@string/hint_metodo"
                 android:textColor="#1E1E1E"
                 android:textColorHint="#7C4DFF"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -80,7 +80,7 @@
                 android:id="@+id/edtNota"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nota"
+                android:hint="@string/hint_nota"
                 android:inputType="numberDecimal"
                 android:textColor="#1E1E1E"
                 android:textColorHint="#7C4DFF"/>
@@ -102,7 +102,7 @@
                 android:id="@+id/edtDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descrição"
+                android:hint="@string/hint_descricao"
                 android:minLines="4"
                 android:gravity="top"
                 android:textColor="#1E1E1E"
@@ -112,7 +112,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categoria Sensorial"
+            android:text="@string/titulo_categoria_sensorial"
             android:textStyle="bold"
             android:textColor="#5E35B1"
             android:textSize="16sp"
@@ -123,12 +123,14 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginBottom="24dp"
+            android:padding="8dp"
             android:background="@android:drawable/editbox_background"/>
+
         <Button
             android:id="@+id/btnSalvar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Salvar Café"
+            android:text="@string/btn_salvar_cafe"
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="bold"
