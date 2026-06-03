@@ -1,145 +1,223 @@
 # Avaliador de Cafés
 
-Aplicativo Android desenvolvido em Kotlin com o objetivo de registrar, avaliar e organizar cafés com base em métodos de extração, notas e características sensoriais.
+Aplicativo Android desenvolvido em Kotlin para cadastro, avaliação e gerenciamento de cafés, permitindo registrar métodos de extração, notas e características sensoriais.
 
-O projeto foi desenvolvido utilizando Android Studio, RecyclerView e Room Database, aplicando conceitos de CRUD completo, organização em camadas e interface gráfica com Material Design.
+---
 
-## Funcionalidades
+## Status do Projeto
 
-- Cadastro de cafés
-- Listagem de cafés cadastrados
-- Atualização de informações
-- Exclusão de cafés
-- Sistema de notas
-- Registro de métodos de extração
-- Organização por tags
-- Persistência de dados com Room Database
-- Interface simples e intuitiva
+- Projeto funcional
+- Banco de dados SQLite integrado
+- Sistema de pesquisa implementado
+- Splash Screen animada
+- Interface desenvolvida com Material Design
+
+---
+
+## Desenvolvedora
+
+Mariana Rigueiro
+
+---
+
+## Objetivo do Projeto
+
+O objetivo do aplicativo é auxiliar apreciadores de café a registrarem e organizarem suas experiências de degustação.
+
+O sistema permite cadastrar diferentes cafés, armazenar informações importantes sobre cada avaliação e consultar rapidamente os registros realizados.
+
+---
 
 ## Tecnologias Utilizadas
 
 - Kotlin
 - Android Studio
-- XML
+- Room Database (SQLite)
 - RecyclerView
-- Room Database
-- ViewBinding
-- Material Design
-- SQLite
+- View Binding
+- Material Design 3
+- CardView
 
-## Estrutura do Projeto
+---
 
-```text
-com.example.avaliadorcafe
-│
-├── adapter
-│   └── CafeAdapter.kt
-│
-├── data
-│   ├── AppDatabase.kt
-│   └── CafeDao.kt
-│
-├── model
-│   └── Cafe.kt
-│
-├── CadastroActivity.kt
-├── MainActivity.kt
-│
-└── res
-    ├── layout
-    │   ├── activity_main.xml
-    │   ├── activity_cadastro.xml
-    │   └── item_cafe.xml
-````
+## Funcionalidades
 
-## Estrutura da Main Activity
+### Cadastro de Cafés
 
-A MainActivity é a tela principal do aplicativo. Ela possui:
+O aplicativo permite registrar:
 
-* RecyclerView para exibir as avaliações cadastradas;
-* FloatingActionButton para adicionar um novo café;
-* Integração com o banco de dados Room;
-* Atualização automática da lista de cafés;
-* Navegação para a tela de cadastro.
+- Nome do café
+- Método de extração
+- Nota da avaliação
+- Descrição
+- Categoria sensorial
 
-Fluxo da aplicação:
+### Pesquisa
 
-SplashActivity → MainActivity → CadastroActivity
+- Busca em tempo real
+- Filtro por nome
 
-A MainActivity atua como ponto central da aplicação, permitindo visualizar, consultar e gerenciar todas as avaliações registradas.
+### Gerenciamento
 
-## Funcionalidades do CRUD
+- Visualizar cafés cadastrados
+- Editar avaliações
+- Excluir avaliações
+- Atualizar informações
 
-### Create
+### Categorias Sensoriais
 
-Permite cadastrar novos cafés no aplicativo.
+- Doce
+- Frutado
+- Cítrico
+- Chocolate
+- Caramelo
+- Floral
 
-### Read
+---
 
-Exibe todos os cafés cadastrados utilizando RecyclerView.
+## Capturas de Tela
 
-### Update
+### Splash Screen
 
-Possibilita editar informações já registradas.
+<img src="prints/splash.png" width="250">
 
-### Delete
+### Tela Inicial
 
-Permite remover cafés cadastrados.
+<img src="prints/home.png" width="250">
 
-## Campos do Cadastro
+### Cadastro de Café
 
-Cada café possui:
+<img src="prints/cadastro.png" width="250">
 
-* Nome
-* Método de extração
-* Nota
-* Descrição
-* Tags
+### Edição de Café
 
-## Métodos de Extração Utilizados
+<img src="prints/editar.png" width="250">
 
-Exemplos cadastráveis no aplicativo:
+---
 
-* V60
-* Aeropress
-* Espresso
-* Prensa Francesa
-* Chemex
-* Cold Brew
+## Como Executar o Projeto
 
-## Banco de Dados
-
-O aplicativo utiliza Room Database para armazenamento local dos dados, permitindo persistência mesmo após o fechamento do aplicativo.
-
-## Interface
-
-A interface foi desenvolvida com XML e componentes do Material Design, buscando uma experiência visual simples, organizada e funcional.
-
-## Objetivo do Projeto
-
-O projeto foi desenvolvido com foco em aprendizado prático de desenvolvimento Android nativo, aplicando conceitos importantes como:
-
-* CRUD
-* Banco de dados local
-* Navegação entre Activities
-* RecyclerView
-* Arquitetura básica de aplicações Android
-* Organização de código
-
-## Como Executar
-
-1. Clone o repositório:
+### Clonar o Repositório
 
 ```bash
 git clone https://github.com/marianarigueiro/AvaliadorCafe.git
 ```
 
-2. Abra o projeto no Android Studio.
+### Abrir no Android Studio
 
-3. Aguarde a sincronização do Gradle.
+1. Abra o Android Studio.
+2. Clique em **Open**.
+3. Selecione a pasta do projeto.
 
-4. Execute o aplicativo em um emulador ou dispositivo físico.
+### Sincronizar o Gradle
 
-## Autor
+Aguarde a sincronização automática do projeto.
 
-Mariana Rigueiro
+### Executar o Aplicativo
+
+1. Conecte um dispositivo Android ou abra um emulador.
+2. Clique em **Run** ou pressione:
+
+```text
+Shift + F10
+```
+
+### Gerar APK
+
+No Android Studio:
+
+```text
+Build
+→ Build APK(s)
+```
+
+O APK será gerado em:
+
+```text
+app/build/outputs/apk/debug/
+```
+
+---
+
+## Banco de Dados
+
+O aplicativo utiliza Room Database para armazenamento local.
+
+### Entidade Principal: Cafe
+
+| Campo | Tipo |
+|---------|---------|
+| id | INTEGER |
+| nome | TEXT |
+| metodo | TEXT |
+| nota | TEXT |
+| descricao | TEXT |
+| tags | TEXT |
+
+---
+
+## Estrutura do Projeto
+
+```text
+AvaliadorCafe/
+│
+├── app/
+│   └── src/main/
+│       ├── java/com/example/avaliadorcafe/
+│       ├── res/layout/
+│       ├── res/anim/
+│       ├── res/values/
+│       └── AndroidManifest.xml
+│
+├── prints/
+├── README.md
+├── build.gradle.kts
+└── settings.gradle.kts
+```
+
+---
+
+## Melhorias Futuras
+
+- Ordenação por nota
+- Ordenação por nome
+- Favoritar cafés
+- Adicionar imagens dos cafés
+- Compartilhamento de avaliações
+- Estatísticas de degustação
+- Exportação de dados
+
+---
+
+## Requisitos
+
+- Android 5.0 ou superior
+- Android Studio
+- Kotlin
+- Gradle
+
+---
+
+## Licença
+
+Projeto desenvolvido para fins acadêmicos e educacionais.
+
+---
+
+## Considerações Finais
+
+O projeto Avaliador de Cafés foi desenvolvido com foco no aprendizado de desenvolvimento Android e persistência de dados.
+
+Durante o desenvolvimento foram aplicados conceitos de:
+
+- Kotlin
+- Android Studio
+- Room Database
+- RecyclerView
+- Material Design
+- View Binding
+- Persistência de dados locais
+- Navegação entre Activities
+- Splash Screen com animação
+
+O resultado é um aplicativo funcional, organizado e adequado para estudos, portfólio e uso pessoal.
